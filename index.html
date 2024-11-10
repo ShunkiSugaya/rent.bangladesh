@@ -1,90 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不動産マッチングサイト</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">RoomMatch</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#search">物件を探す</a></li>
+                    <li><a href="#favorite">お気に入り</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="#login" class="login-btn">ログイン</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>理想のお部屋を、かんたん検索</h2>
+            <p>1,000件以上の物件から、あなたにぴったりの一室をお探しします</p>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
+    </section>
+
+    <!-- 検索フォーム -->
+    <section class="search-section">
+        <div class="search-container">
+            <form class="search-form">
+                <div class="search-row">
+                    <div class="search-group">
+                        <label>エリア</label>
+                        <select>
+                            <option>東京都23区</option>
+                            <option>横浜市</option>
+                            <option>川崎市</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label>家賃</label>
+                        <div class="price-range">
+                            <input type="number" placeholder="下限">
+                            <span>〜</span>
+                            <input type="number" placeholder="上限">
+                        </div>
+                    </div>
+                    <div class="search-group">
+                        <label>間取り</label>
+                        <select>
+                            <option>1R/1K</option>
+                            <option>1DK/1LDK</option>
+                            <option>2K/2DK</option>
+                            <option>2LDK以上</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="search-button">検索する</button>
+            </form>
         </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
+    </section>
+
+    <!-- 物件一覧 -->
+    <section class="property-list">
+        <h3>新着物件</h3>
+        <div class="property-grid">
+            <!-- 物件カード -->
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="/api/placeholder/400/300" alt="物件画像">
+                    <span class="property-type">マンション</span>
+                </div>
+                <div class="property-info">
+                    <h4>駅近デザイナーズマンション</h4>
+                    <p class="price">¥95,000</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> 東京都渋谷区</p>
+                    <div class="property-details">
+                        <span><i class="fas fa-bed"></i> 1LDK</span>
+                        <span><i class="fas fa-ruler-combined"></i> 35.5m²</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 物件カード2 -->
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="/api/placeholder/400/300" alt="物件画像">
+                    <span class="property-type">アパート</span>
+                </div>
+                <div class="property-info">
+                    <h4>閑静な住宅街のアパート</h4>
+                    <p class="price">¥80,000</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> 東京都世田谷区</p>
+                    <div class="property-details">
+                        <span><i class="fas fa-bed"></i> 2K</span>
+                        <span><i class="fas fa-ruler-combined"></i> 40.2m²</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 物件カード3 -->
+            <div class="property-card">
+                <div class="property-image">
+                    <img src="/api/placeholder/400/300" alt="物件画像">
+                    <span class="property-type">マンション</span>
+                </div>
+                <div class="property-info">
+                    <h4>新築タワーマンション</h4>
+                    <p class="price">¥120,000</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> 東京都中央区</p>
+                    <div class="property-details">
+                        <span><i class="fas fa-bed"></i> 1LDK</span>
+                        <span><i class="fas fa-ruler-combined"></i> 45.0m²</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>RoomMatch</h4>
+                <p>理想のお部屋探しをサポートします</p>
+            </div>
+            <div class="footer-section">
+                <h4>リンク</h4>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">利用規約</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>お問い合わせ</h4>
+                <p>電話: 03-1234-5678</p>
+                <p>メール: info@roommatch.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RoomMatch All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
